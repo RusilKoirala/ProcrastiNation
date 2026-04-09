@@ -16,11 +16,12 @@ export default function AchievementSystem({ unlocked }: AchievementSystemProps) 
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger
           id="achievements-btn"
-          className="relative neo-btn bg-[#FDFD96] text-black border-2 border-black"
+          className="relative neo-btn bg-[#FDFD96] text-black border-2 border-black px-2 py-1 sm:px-3 sm:py-1.5"
         >
-            🏅 Achievements
+            <span className="hidden sm:inline">🏅 Achievements</span>
+            <span className="sm:hidden text-lg">🏅</span>
             {unlocked.size > 0 && (
-              <span className="absolute -top-2 -right-2 bg-[#FF6B6B] text-white text-xs w-5 h-5 rounded-full flex items-center justify-center border-2 border-black font-bold">
+              <span className="absolute -top-2 -right-2 bg-[#FF6B6B] text-white text-[10px] sm:text-xs w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center border-2 border-black font-bold">
                 {unlocked.size}
               </span>
             )}

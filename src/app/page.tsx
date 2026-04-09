@@ -98,15 +98,15 @@ export default function Home() {
       {/* ── NAVBAR ── */}
       <header className="border-b-4 border-black bg-black text-white sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-[#FDFD96] border-2 border-white flex items-center justify-center">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="w-8 h-8 bg-[#FDFD96] border-2 border-white flex shrink-0 items-center justify-center">
               <span className="text-black text-sm font-black">PN</span>
             </div>
             <div>
-              <h1 className="font-black text-sm uppercase tracking-widest leading-none">
+              <h1 className="font-black text-xs sm:text-sm uppercase tracking-widest leading-none">
                 ProcrastiNation™
               </h1>
-              <p className="text-[10px] font-mono text-gray-400 mt-0.5">
+              <p className="text-[10px] font-mono text-gray-400 mt-1 hidden sm:block">
                 v6.9.0 • Enterprise Idle Edition
               </p>
             </div>
@@ -123,9 +123,10 @@ export default function Home() {
                   duration: 3000,
                 });
               }}
-              className="neo-btn bg-white text-black text-xs px-3 py-1.5 border-white hover:bg-[#FDFD96]"
+              className="neo-btn bg-white text-black text-[10px] sm:text-xs px-2 py-1 sm:px-3 sm:py-1.5 border-white hover:bg-[#FDFD96]"
             >
-              ⚙️ Settings
+              <span className="hidden sm:inline">⚙️ Settings</span>
+              <span className="sm:hidden text-base">⚙️</span>
             </button>
 
             <AchievementSystem unlocked={unlocked} />
@@ -136,12 +137,12 @@ export default function Home() {
       <main className="max-w-6xl mx-auto px-4 py-8">
         {/* ── HERO ── */}
         <section className="mb-10 text-center">
-          <div className="inline-block border-4 border-black bg-[#FDFD96] px-6 py-2 mb-4" style={{ boxShadow: "6px 6px 0px #000" }}>
-            <p className="font-mono text-xs font-bold uppercase tracking-widest">
+          <div className="inline-block border-4 border-black bg-[#FDFD96] px-4 sm:px-6 py-2 mb-4" style={{ boxShadow: "4px 4px 0px #000" }}>
+            <p className="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest">
               🏆 #1 Most Downloaded Productivity App for People Who Don't Produce Anything
             </p>
           </div>
-          <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-3">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-3">
             Stop Working.
             <br />
             <span className="text-[#FF6B6B]">Start Appearing To.</span>
@@ -159,9 +160,9 @@ export default function Home() {
               { label: "Excuses Generated", value: "12B" },
               { label: "Deadlines Dodged", value: "All of them" },
             ].map((stat) => (
-              <div key={stat.label} className="border-2 border-black bg-white px-4 py-2" style={{ boxShadow: "3px 3px 0px #000" }}>
-                <div className="font-black text-xl">{stat.value}</div>
-                <div className="text-[10px] font-mono text-gray-500 uppercase">{stat.label}</div>
+              <div key={stat.label} className="border-2 border-black bg-white px-3 py-2 sm:px-4 w-[45%] sm:w-auto" style={{ boxShadow: "3px 3px 0px #000" }}>
+                <div className="font-black text-lg sm:text-xl">{stat.value}</div>
+                <div className="text-[8px] sm:text-[10px] font-mono text-gray-500 uppercase">{stat.label}</div>
               </div>
             ))}
           </div>
